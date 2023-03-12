@@ -29,6 +29,7 @@ function App() {
   };
 
   const handleFilter = (e) => {
+    console.log('clicked');
     // if (e.target.checked && e.target.name === 'all') {
     //   console.log(e.target.name);
     //   setTours(allTours);
@@ -36,9 +37,11 @@ function App() {
     //   return;
     // }
     if (e.target.checked && e.target.name !== 'all') {
+      console.log(e.target.checked);
       const newList = allTours.filter((tour) => tour.continent === e.target.name);
       setFilteredTours([...filteredTours, ...newList]);
-    } else {
+    } else if (!e.target.checked) {
+      console.log(e.target.checked);
       const newList = filteredTours.filter((tour) => tour.continent !== e.target.name);
       setFilteredTours(newList);
     }

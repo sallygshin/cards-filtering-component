@@ -28,7 +28,7 @@ const Filter = ({ updateTours, handleFilter }) => {
       {continents.map((c, index) => {
         return (
           <div key={index} className="form-control">
-            <input type="checkbox" name={c} value={c} onChange={handleFilter} />
+            <input type="checkbox" name={c} id={c} value={c} onChange={handleFilter} />
             <label htmlFor={c}>{c}</label>
           </div>
         );
